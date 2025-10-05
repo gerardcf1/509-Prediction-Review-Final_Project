@@ -75,10 +75,12 @@ git clone https://github.com/gerardcf1/509-Prediction-Review-Final_Project.git
 cd 509-Prediction-Review-Final_Project
 ```
 
-2️⃣ Install Dependencies
+2️⃣ Install Dependencies:
+
 pip install -r requirements.txt
 
-3️⃣ Run the Flask App
+3️⃣ Run the Flask App:
+
 python app.py
 
 
