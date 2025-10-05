@@ -73,3 +73,21 @@ These results show the model successfully distinguishing between **negative, neu
 ```bash
 git clone https://github.com/gerardcf1/509-Prediction-Review-Final_Project.git
 cd 509-Prediction-Review-Final_Project
+```
+### 1️⃣ Clone the Repository
+python app.py
+
+2️⃣ Create a Virtual Environment (Recommended)
+python -m venv venv
+# macOS / Linux
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
+
+3️⃣ Install Dependencies
+pip install -r requirements.txt
+
+🚀 Running the Application
+▶️ Option 1: Run the Flask App
+python app.py
+
