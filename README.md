@@ -73,6 +73,8 @@ These results show the model successfully distinguishing between **negative, neu
 ```bash
 git clone https://github.com/gerardcf1/509-Prediction-Review-Final_Project.git
 cd 509-Prediction-Review-Final_Project
+```
+
 2️⃣ Install Dependencies
 pip install -r requirements.txt
 
