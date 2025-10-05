@@ -76,24 +76,25 @@ cd 509-Prediction-Review-Final_Project
 ```
 
 2️⃣ Install Dependencies:
-
+```bash
 pip install -r requirements.txt
-
+```
 3️⃣ Run the Flask App:
-
+```bash
 python app.py
-
+```
 
 Then open your browser and go to http://127.0.0.1:5000/
 
 🌐 Run via Streamlit (Recommended)
 1️⃣ Launch Locally
+```bash
 streamlit run streamlit_app.py
-
+```
 2️⃣ Or Try It Online
-
+```bash
 🚀 https://509-final-project.streamlit.app/
-
+```
 🧩 How It Works
 
 The user selects a movie and writes a short review.
