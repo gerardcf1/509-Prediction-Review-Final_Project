@@ -73,21 +73,29 @@ These results show the model successfully distinguishing between **negative, neu
 ```bash
 git clone https://github.com/gerardcf1/509-Prediction-Review-Final_Project.git
 cd 509-Prediction-Review-Final_Project
-```
-### 1️⃣ Clone the Repository
-python app.py
-
-2️⃣ Create a Virtual Environment (Recommended)
-python -m venv venv
-# macOS / Linux
-source venv/bin/activate
-# Windows
-venv\Scripts\activate
-
-3️⃣ Install Dependencies
+2️⃣ Install Dependencies
 pip install -r requirements.txt
 
-🚀 Running the Application
-▶️ Option 1: Run the Flask App
+3️⃣ Run the Flask App
 python app.py
 
+
+Then open your browser and go to http://127.0.0.1:5000/
+
+🌐 Run via Streamlit (Recommended)
+1️⃣ Launch Locally
+streamlit run streamlit_app.py
+
+2️⃣ Or Try It Online
+
+🚀 https://509-final-project.streamlit.app/
+
+🧩 How It Works
+
+The user selects a movie and writes a short review.
+
+The app cleans and vectorizes the text (TF-IDF / char-ngrams).
+
+Both models predict a numeric rating.
+
+Their results are averaged → clipped to a 1-10 range → displayed with stars.
