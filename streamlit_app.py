@@ -156,6 +156,7 @@ else:
     review = st.text_area("✏️ Write your review here:", height=150, key="review_input")
 
     if st.button("Predict My Rating ⭐"):
+        from interpretability import get_top_features
         cleaned_review = review.strip()
         if len(cleaned_review.split()) < 3:
             st.warning("⚠️ Please write a bit more text for an accurate prediction.")
@@ -172,6 +173,12 @@ else:
                 else:
                     pred = predict_ensemble([cleaned_review])[0]
                     st.session_state.predicted_rating = int(np.clip(round(pred), 1, 10))
+                    top_features = get_top_features(cleaned_review, word_model, n=5)
+                    if top_features:
+                        st.session_state.top_features = top_features
+                    else:
+                        st.session_state.top_features = []
+
                     st.rerun()  # ✅ Makes the result appear immediately
 
 # Step 3: Show result
@@ -180,6 +187,9 @@ if st.session_state.predicted_rating:
     st.markdown("---")
     st.markdown(f"<h3>Your predicted rating for <b>{movie['title']}</b> is...</h3>", unsafe_allow_html=True)
     st.markdown(f"<div class='rating'>⭐ {st.session_state.predicted_rating}/10 ⭐</div>", unsafe_allow_html=True)
+    if "top_features" in st.session_state and st.session_state.top_features:
+        st.write("**Top contributing words:**", ", ".join(st.session_state.top_features))
+        
     if st.button("🔄 Try another movie"):
         st.session_state.selected_movie = None
         st.session_state.predicted_rating = None
